@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rich's Official Investigation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#080808;color:#fff;font-family:Arial,sans-serif;padding:22px}
+.card{width:min(650px,100%);padding:38px 25px;text-align:center;border:1px solid #ffffff22;border-radius:26px;background:#151515;box-shadow:0 25px 80px #000}
+.badge{display:inline-block;padding:8px 14px;border-radius:99px;background:#2b2b2b;color:#aaa;font-size:12px;letter-spacing:2px}
+h1{font-size:clamp(34px,8vw,62px);margin:20px 0 10px}
+p{font-size:19px;line-height:1.55;color:#ccc}
+button{margin-top:18px;padding:16px 25px;border:0;border-radius:12px;background:#fff;color:#111;font-size:18px;font-weight:800;cursor:pointer}
+#loading{display:none;margin-top:28px;color:#aaa}
+#result{display:none;margin-top:28px;font-size:28px;font-weight:900}
+.small{margin-top:30px;font-size:12px;color:#666}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="badge">RICH • CLASSIFIED</div>
+<h1>🚨 HOLD UP.</h1>
+<p>You've scanned a QR code personally authorized by <b>Rich</b>.</p>
+<p>We're conducting a very serious investigation into why you were curious enough to scan it.</p>
+<button onclick="investigate()">START INVESTIGATION</button>
+<div id="loading">🔎 Analyzing your decision-making...</div>
+<div id="result"></div>
+<div class="small">Department of Completely Unnecessary Investigations © 2026</div>
+</div>
+<script>
+function investigate(){
+  document.querySelector('button').style.display='none';
+  document.getElementById('loading').style.display='block';
+  setTimeout(()=>{
+    document.getElementById('loading').style.display='none';
+    const r=document.getElementById('result');
+    r.innerHTML="😂 CONFIRMED.<br><br>You just gave Rich 10 seconds of your life.<br><br>He has no plans to give them back.";
+    r.style.display='block';
+  },2200);
+}
+</script>
+</body>
+</html>
